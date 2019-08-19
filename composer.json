@@ -39,7 +39,7 @@
   "extra": {
       "laravel": {
           "providers": [
-              "Vkovic\\LaravelEventLog\\LaravelEventLogServiceProvider"
+              "Vkovic\\LaravelEventLog\\EventLogServiceProvider"
           ]
       }
   },
