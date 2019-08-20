@@ -4,6 +4,7 @@ namespace Vkovic\LaravelEventLog;
 
 use Illuminate\Support\ServiceProvider;
 use Vkovic\LaravelEventLog\Console\Commands\EventLogClean;
+use function Vkovic\LaravelEventLog\package_path;
 
 class EventLogServiceProvider extends ServiceProvider
 {
