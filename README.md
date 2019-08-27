@@ -31,12 +31,12 @@ php artisan migrate
 
 ## Usage
 
-Lorem ipsum
-
 ## Contributing
 
 If you plan to modify this Laravel package you should run tests that comes with it.
 Easiest way to accomplish this would be with `Docker`, `docker-compose` and `phpunit`.
+
+> TIP: If you're planning to help writing tests, please consult [this tutorial](https://adamwathan.me/2016/08/15/three-approaches-to-testing-events-in-laravel/)
 
 First, we need to initialize Docker containers:
 

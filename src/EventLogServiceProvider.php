@@ -2,9 +2,9 @@
 
 namespace Vkovic\LaravelEventLog;
 
+use Illuminate\Events\Dispatcher;
 use Illuminate\Support\ServiceProvider;
 use Vkovic\LaravelEventLog\Console\Commands\EventLogClean;
-use function Vkovic\LaravelEventLog\package_path;
 
 class EventLogServiceProvider extends ServiceProvider
 {
@@ -18,7 +18,7 @@ class EventLogServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(package_path('database/migrations'));
 
         // Disable event logging functionality if config says so
-        if (config('event_log.enabled') !== true) {
+        if (config('event-log.enabled') !== true) {
             return;
         }
 
@@ -44,7 +44,10 @@ class EventLogServiceProvider extends ServiceProvider
      */
     protected function registerListener()
     {
-        \Event::listen(config('event_log.events'), function (...$args) {
+        $event = app(Dispatcher::class);
+        $namespace = config('event-log.events');
+
+        $event->listen($namespace, function (...$args) {
             // If we're listening to wildcard events,
             // then the arguments are different
             if (isset($args[1])) {

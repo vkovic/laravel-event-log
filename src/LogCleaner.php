@@ -11,7 +11,7 @@ class LogCleaner
      *
      * @param $daysToKeep
      */
-    public static function clean($daysToKeep)
+    public static function clean($daysToKeep, $event = null)
     {
         \DB::table('event_log')
             ->where('created_at', '<', Carbon::now()->subDays($daysToKeep))
