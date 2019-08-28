@@ -29,9 +29,16 @@ class EventLogServiceProvider extends ServiceProvider
         $this->registerListener();
     }
 
+    /**
+     * Register any application services.
+     *
+     * @return void
+     */
     public function register()
     {
         $this->mergeConfigFrom(package_path('config/event-log.php'), 'event-log');
+
+        $this->registerCommands();
     }
 
     protected function registerCommands()
