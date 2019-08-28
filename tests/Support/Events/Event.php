@@ -4,7 +4,7 @@ namespace Vkovic\LaravelEventLog\Test\Support\Events;
 
 use Vkovic\LaravelEventLog\Loggable;
 
-class SimpleEvent
+class Event
 {
     use Loggable;
 }

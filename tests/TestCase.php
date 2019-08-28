@@ -24,6 +24,8 @@ class TestCase extends OrchestraTestCase
         $this->artisan('migrate');
 
         $this->loadMigrationsFrom(package_path('tests/database/migrations'));
+
+        $this->loadFactoriesUsing($this->app, package_path('tests/database/factories'));
     }
 
     /**
