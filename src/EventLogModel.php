@@ -77,4 +77,14 @@ class EventLogModel extends Model
     {
         return $query->where('created_at', '>=', Carbon::today()->subMonths($months));
     }
+    
+    public function ScopeLogsFrom(Carbon $date)
+    {
+        // TODO
+    }
+    
+    public function ScopeLogsTo(Carbon $date)
+    {
+        // TODO
+    }
 }
